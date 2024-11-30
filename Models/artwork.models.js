@@ -1,7 +1,9 @@
-const {Schema,models}=require('mongoose');
+const { Schema, models } = require("mongoose");
 
-const schema=new Schema({
-      title:{type:String,require:true},
-      title:{type:String},
-      url:{type:String,require:true},
-})
+const schema = new Schema({
+  main_title: { type: String, require: true },
+  sub_title: { type: String, require: true },
+  style: { type: String },
+  year: { type: Number },
+  url: { type: String, require: true },
+});
