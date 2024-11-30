@@ -1,4 +1,4 @@
-const { Schema, models } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const schema = new Schema({
   main_title: { type: String, require: true },
@@ -8,4 +8,6 @@ const schema = new Schema({
   url: { type: String, require: true },
 });
 
-module.exports={ Schema, models }
+const artWorkModel = model('Artwork', schema);
+
+module.exports = artWorkModel;
