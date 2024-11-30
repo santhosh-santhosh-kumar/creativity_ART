@@ -1,5 +1,4 @@
-
-
+const { Schema, models }=require('../Models/artwork.models')
 //get methode - all
 
 const getGallary=async (req,res)=>{
@@ -16,7 +15,7 @@ const getSingleGallary=async (req,res)=>{
 //post methode
 
 const postGallary=async (req,res)=>{
-      res.send("creativity")
+    
 }
 
 //put methode

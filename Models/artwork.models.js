@@ -7,3 +7,5 @@ const schema = new Schema({
   year: { type: Number },
   url: { type: String, require: true },
 });
+
+module.exports={ Schema, models }
