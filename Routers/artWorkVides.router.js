@@ -2,6 +2,7 @@ const express=require('express');
 const userController=require('../Controller/artWorkVides.controller');
 const route=express.Router();
 const upload=require('../Multer/artWorkVides.multer');
+
 route.get('/',userController.getVideos)
 route.get('/:id',userController.getSingleVideo)
 route.post('/',upload.single('video'),userController.postVideos)

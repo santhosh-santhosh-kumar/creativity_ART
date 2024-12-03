@@ -2,13 +2,17 @@ const express=require('express');
 const connectDB=require('./database/mongoDB');
 const artWorkImages = require('./Routers/artwork.router')
 const artWorkVideos=require('./Routers/artWorkVides.router')
+const register=require('./Routers/register.router')
+const login=require('./Routers/login.route')
 const app = express();
 const cors=require('cors');
 const path=require('path');
+
 const PORT=process.env.PORT||3001
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
+app.options('*', cors());
 
 app.use("/Images", express.static(path.join(__dirname, "Images")));
 app.use("/Videos", express.static(path.join(__dirname, "Images")));
@@ -16,6 +20,8 @@ app.use("/Videos", express.static(path.join(__dirname, "Images")));
 //routers
 app.use('/artwork',artWorkImages)
 app.use('/artWorkVideos',artWorkVideos)
+app.use('/register',register)
+app.use('/login',login)
 
 app.get('/',(req,res)=>{
     res.send("server on")
