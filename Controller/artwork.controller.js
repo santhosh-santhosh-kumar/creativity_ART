@@ -24,7 +24,7 @@ const getSingleGallary = async (req, res) => {
 //post methode
 
 const postGallary = async (req, res) => {
-  console.log(req.body)
+  console.log(req.file)
   const file = req.file;
   try {
     const postArt = new artWorkModel({
