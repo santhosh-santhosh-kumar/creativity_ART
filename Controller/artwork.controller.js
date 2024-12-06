@@ -4,7 +4,7 @@ const {ObjectId} =require('mongodb')
 
 const getGallary = async (req, res) => {
   try {
-    const findArt = await artWorkModel.find().sort({ createdAt: -1 });
+    const findArt = await artWorkModel.find().sort({ _id: -1 });
     res.status(200).json(findArt);
   } catch (err) {
     res.status(500).send(err.message);

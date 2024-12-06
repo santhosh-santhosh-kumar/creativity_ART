@@ -5,7 +5,7 @@ const {ObjectId}=require('mongodb')
 
 const getVideos = async (req, res) => {
       try {
-        const findVideo = await artWorkVideosModel.find();
+        const findVideo = await artWorkVideosModel.find().sort({ _id: -1 });
         res.status(200).json(findVideo);
       } catch (err) {
         res.status(500).send(err.message);

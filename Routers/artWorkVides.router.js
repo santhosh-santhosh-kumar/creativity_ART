@@ -5,7 +5,7 @@ const upload=require('../Multer/artWorkVides.multer');
 
 route.get('/',userController.getVideos)
 route.get('/:id',userController.getSingleVideo)
-route.post('/',upload.single('video'),userController.postVideos)
+route.post('/',upload.single('url'),userController.postVideos)
 route.put('/:id',userController.updateVideos)
 route.delete('/:id',userController.deleteVideos)
 
